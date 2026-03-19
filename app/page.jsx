@@ -3,63 +3,10 @@ import { useState, useEffect, useRef } from "react";
 
 const GlobalStyles = () => (
   <style>{`
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+    /* CSS variables & base styles are in globals.css */
+    /* Only component-level styles here */
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ── DARK (default) ── */
-    :root {
-      --bg: #050505;
-      --surface: rgba(255,255,255,0.028);
-      --surface-2: rgba(255,255,255,0.05);
-      --border: rgba(255,255,255,0.075);
-      --border-bright: rgba(99,179,255,0.45);
-      --blue: #3b9eff;
-      --purple: #8b5cf6;
-      --cyan: #06b6d4;
-      --green: #10b981;
-      --amber: #f59e0b;
-      --text: #efefef;
-      --muted: #555;
-      --dim: #888;
-      --font-sans: 'Space Grotesk', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      --r: 16px;
-      --nav-bg: rgba(5,5,5,0.9);
-      --mobile-menu-bg: rgba(5,5,5,0.97);
-    }
-
-    /* ── LIGHT ── */
-    [data-theme="light"] {
-      --bg: #f0f4ff;
-      --surface: rgba(255,255,255,0.8);
-      --surface-2: rgba(255,255,255,0.95);
-      --border: rgba(0,0,0,0.09);
-      --border-bright: rgba(59,158,255,0.55);
-      --text: #0d1117;
-      --muted: #999;
-      --dim: #555;
-      --nav-bg: rgba(240,244,255,0.92);
-      --mobile-menu-bg: rgba(240,244,255,0.98);
-    }
-
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-sans);
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      cursor: none;
-      transition: background 0.5s ease, color 0.5s ease;
-    }
-    @media (pointer: coarse) { body { cursor: auto; } }
-
-    ::-webkit-scrollbar { width: 3px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: rgba(59,158,255,0.3); border-radius: 2px; }
-    ::selection { background: rgba(59,158,255,0.28); color: #fff; }
 
     @keyframes fadeUp    { from{opacity:0;transform:translateY(36px)} to{opacity:1;transform:translateY(0)} }
     @keyframes fadeIn    { from{opacity:0} to{opacity:1} }
