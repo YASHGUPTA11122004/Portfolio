@@ -319,9 +319,42 @@ const useActive = ids => {
 ══════════════════════════════════════════════════════ */
 const Hero = () => {
   const words = ["Engineering", "Scalable", "Systems", "&", "Researching", "AI."];
+  const PHOTO = "https://raw.githubusercontent.com/YASHGUPTA11122004/Portfolio/main/photo.jpeg";
   return (
     <section id="hero" style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "120px 48px 80px", maxWidth: 1200, margin: "0 auto", position: "relative" }}>
       <div style={{ flex: 1, maxWidth: 720 }}>
+
+        {/* ── Name + Photo row ── */}
+        <div style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 28, animation: "fadeUp 0.6s ease both", animationDelay: "0.05s", opacity: 0 }}>
+          {/* Avatar with glow ring */}
+          <div style={{ position: "relative", flexShrink: 0 }}>
+            <div style={{
+              width: 72, height: 72, borderRadius: "50%",
+              background: "linear-gradient(135deg,#3b9eff,#8b5cf6,#06b6d4)",
+              padding: 2,
+              boxShadow: "0 0 24px rgba(59,158,255,0.4), 0 0 48px rgba(139,92,246,0.2)",
+              animation: "float 4s ease-in-out infinite",
+            }}>
+              <img
+                src={PHOTO}
+                alt="Yash Gupta"
+                style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", border: "2px solid var(--bg)" }}
+              />
+            </div>
+            {/* Online dot */}
+            <div style={{ position: "absolute", bottom: 4, right: 4, width: 12, height: 12, borderRadius: "50%", background: "var(--green)", border: "2px solid var(--bg)", boxShadow: "0 0 8px var(--green)" }} />
+          </div>
+          {/* Name + title */}
+          <div>
+            <div style={{ fontSize: "clamp(22px,3vw,32px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.1 }}>
+              Yash Gupta
+            </div>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--blue)", marginTop: 4 }}>
+              Backend Engineer · New Delhi, India
+            </div>
+          </div>
+        </div>
+
         {/* Badge */}
         <div style={{ animation: "fadeUp 0.6s ease both", animationDelay: "0.1s" }}>
           <span className="chip" style={{ marginBottom: 28, display: "inline-flex", borderColor: "rgba(16,185,129,0.35)", background: "rgba(16,185,129,0.07)" }}>
