@@ -325,32 +325,32 @@ const Hero = () => {
       <div style={{ flex: 1, maxWidth: 720 }}>
 
         {/* ── Name + Photo row ── */}
-        <div style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 28, animation: "fadeUp 0.6s ease both", animationDelay: "0.05s", opacity: 0 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 24, marginBottom: 32, animation: "fadeUp 0.6s ease both", animationDelay: "0.05s", opacity: 0 }}>
           {/* Avatar with glow ring */}
           <div style={{ position: "relative", flexShrink: 0 }}>
             <div style={{
-              width: 72, height: 72, borderRadius: "50%",
+              width: 120, height: 120, borderRadius: "50%",
               background: "linear-gradient(135deg,#3b9eff,#8b5cf6,#06b6d4)",
-              padding: 2,
-              boxShadow: "0 0 24px rgba(59,158,255,0.4), 0 0 48px rgba(139,92,246,0.2)",
+              padding: 3,
+              boxShadow: "0 0 36px rgba(59,158,255,0.5), 0 0 72px rgba(139,92,246,0.3)",
               animation: "float 4s ease-in-out infinite",
             }}>
               <img
                 src={PHOTO}
                 alt="Yash Gupta"
-                style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", border: "2px solid var(--bg)" }}
+                style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", border: "3px solid var(--bg)" }}
               />
             </div>
             {/* Online dot */}
-            <div style={{ position: "absolute", bottom: 4, right: 4, width: 12, height: 12, borderRadius: "50%", background: "var(--green)", border: "2px solid var(--bg)", boxShadow: "0 0 8px var(--green)" }} />
+            <div style={{ position: "absolute", bottom: 6, right: 6, width: 16, height: 16, borderRadius: "50%", background: "var(--green)", border: "3px solid var(--bg)", boxShadow: "0 0 12px var(--green)" }} />
           </div>
           {/* Name + title */}
           <div>
-            <div style={{ fontSize: "clamp(22px,3vw,32px)", fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.1 }}>
+            <div style={{ fontSize: "clamp(30px,4vw,48px)", fontWeight: 700, letterSpacing: "-0.025em", lineHeight: 1.1 }}>
               Yash Gupta
             </div>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--blue)", marginTop: 4 }}>
-              Backend Engineer · New Delhi, India
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--blue)", marginTop: 8 }}>
+              Software Engineer · New Delhi, India
             </div>
           </div>
         </div>
@@ -373,9 +373,9 @@ const Hero = () => {
         </h1>
 
         {/* Sub */}
-        <p style={{ fontSize: 17, color: "var(--dim)", maxWidth: 520, marginBottom: 28, lineHeight: 1.75, animation: "fadeUp 0.6s ease both", animationDelay: "0.82s", opacity: 0 }}>
+        <p style={{ fontSize: 15, color: "var(--dim)", maxWidth: 520, marginBottom: 28, lineHeight: 1.7, animation: "fadeUp 0.6s ease both", animationDelay: "0.82s", opacity: 0 }}>
           CS Undergrad <span style={{ color: "var(--blue)", fontWeight: 600 }}>@ Graphic Era Hill University</span>, Bhimtal ·{" "}
-          <span style={{ fontFamily: "var(--font-mono)", color: "var(--text)", fontSize: 15 }}>8.41 CGPA</span> · Backend & Systems Enthusiast.
+          <span style={{ fontFamily: "var(--font-mono)", color: "var(--text)", fontSize: 13 }}>8.41 CGPA</span> · Backend & Systems Enthusiast.
         </p>
 
         {/* Currently building */}
