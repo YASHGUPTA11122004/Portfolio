@@ -327,7 +327,7 @@ const Hero = () => {
     { val: 2, suf: "", label: "Internships", color: "var(--amber)", dec: 0 },
   ];
   return (
-    <section id="hero" style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "100px 48px 60px", maxWidth: 1200, margin: "0 auto" }}>
+    <section id="hero" style={{ minHeight: "100vh", display: "flex", alignItems: "flex-start", padding: "100px 48px 60px", maxWidth: 1200, margin: "0 auto" }}>
 
       {/* ── LEFT COLUMN (60%) ── */}
       <div style={{ flex: "0 0 58%", paddingRight: 48 }}>
@@ -409,14 +409,13 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* ── RIGHT COLUMN (40%) ── */}
-      <div style={{ flex: "0 0 42%", display: "flex", flexDirection: "column", alignItems: "center", gap: 28, animation: "fadeIn 0.8s ease both", animationDelay: "0.4s", opacity: 0 }}>
+      {/* ── RIGHT COLUMN (42%) — Photo top aligned with name ── */}
+      <div style={{ flex: "0 0 42%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", paddingTop: 0, gap: 24, animation: "fadeIn 0.8s ease both", animationDelay: "0.4s", opacity: 0 }}>
 
-        {/* Big Photo */}
+        {/* Big Photo — top */}
         <div style={{ position: "relative" }}>
-          {/* Outer glow ring */}
           <div style={{
-            width: 260, height: 260, borderRadius: "50%",
+            width: 240, height: 240, borderRadius: "50%",
             background: "linear-gradient(135deg,#3b9eff,#8b5cf6,#06b6d4)",
             padding: 4,
             boxShadow: "0 0 60px rgba(59,158,255,0.4), 0 0 100px rgba(139,92,246,0.25)",
@@ -429,29 +428,29 @@ const Hero = () => {
             />
           </div>
           {/* Online dot */}
-          <div style={{ position: "absolute", bottom: 16, right: 16, width: 20, height: 20, borderRadius: "50%", background: "var(--green)", border: "4px solid var(--bg)", boxShadow: "0 0 14px var(--green)" }} />
-          {/* Decorative ring */}
-          <div style={{ position: "absolute", inset: -12, borderRadius: "50%", border: "1px dashed rgba(59,158,255,0.25)", animation: "spin 20s linear infinite" }} />
+          <div style={{ position: "absolute", bottom: 14, right: 14, width: 18, height: 18, borderRadius: "50%", background: "var(--green)", border: "3px solid var(--bg)", boxShadow: "0 0 12px var(--green)" }} />
+          {/* Spinning ring */}
+          <div style={{ position: "absolute", inset: -10, borderRadius: "50%", border: "1px dashed rgba(59,158,255,0.25)", animation: "spin 20s linear infinite" }} />
         </div>
 
-        {/* Stats grid under photo */}
+        {/* Stats grid — below photo */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, width: "100%", maxWidth: 280 }}>
           {stats.map((s, i) => (
             <div key={s.label} style={{
-              padding: "14px 16px", borderRadius: 12,
+              padding: "18px 14px", borderRadius: 12,
               border: "1px solid var(--border)", background: "var(--surface)",
               textAlign: "center", backdropFilter: "blur(12px)",
               animation: `float ${4 + i * 0.5}s ease-in-out infinite`,
               animationDelay: `${i * 0.3}s`,
-              transition: "border-color 0.2s",
+              transition: "border-color 0.2s, box-shadow 0.2s",
             }}
-              onMouseEnter={e => e.currentTarget.style.borderColor = s.color}
-              onMouseLeave={e => e.currentTarget.style.borderColor = ""}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = s.color; e.currentTarget.style.boxShadow = `0 0 20px ${s.color}33`; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = ""; e.currentTarget.style.boxShadow = ""; }}
             >
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: 22, fontWeight: 700, color: s.color, lineHeight: 1 }}>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: 26, fontWeight: 700, color: s.color, lineHeight: 1 }}>
                 <Counter target={s.val} suffix={s.suf} decimals={s.dec} />
               </div>
-              <div style={{ fontSize: 10, color: "var(--muted)", marginTop: 4, fontFamily: "var(--font-mono)" }}>{s.label}</div>
+              <div style={{ fontSize: 10, color: "var(--muted)", marginTop: 5, fontFamily: "var(--font-mono)" }}>{s.label}</div>
             </div>
           ))}
         </div>
