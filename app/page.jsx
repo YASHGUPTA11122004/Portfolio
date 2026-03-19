@@ -315,119 +315,158 @@ const useActive = ids => {
 };
 
 /* ══════════════════════════════════════════════════════
-   HERO
+   HERO — Classic Split Layout
 ══════════════════════════════════════════════════════ */
 const Hero = () => {
   const words = ["Engineering", "Scalable", "Systems", "&", "Researching", "AI."];
   const PHOTO = "https://raw.githubusercontent.com/YASHGUPTA11122004/Portfolio/main/photo.jpeg";
+  const stats = [
+    { val: 8.41, suf: "", label: "CGPA", color: "var(--blue)", dec: 2 },
+    { val: 500, suf: "+", label: "Problems", color: "var(--purple)", dec: 0 },
+    { val: 100, suf: "d", label: "Streak", color: "var(--green)", dec: 0 },
+    { val: 2, suf: "", label: "Internships", color: "var(--amber)", dec: 0 },
+  ];
   return (
-    <section id="hero" style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "120px 48px 80px", maxWidth: 1200, margin: "0 auto", position: "relative" }}>
-      <div style={{ flex: 1, maxWidth: 720 }}>
+    <section id="hero" style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "100px 48px 60px", maxWidth: 1200, margin: "0 auto" }}>
 
-        {/* ── Name + Photo row ── */}
-        <div style={{ display: "flex", alignItems: "center", gap: 24, marginBottom: 32, animation: "fadeUp 0.6s ease both", animationDelay: "0.05s", opacity: 0 }}>
-          {/* Avatar with glow ring */}
-          <div style={{ position: "relative", flexShrink: 0 }}>
-            <div style={{
-              width: 120, height: 120, borderRadius: "50%",
-              background: "linear-gradient(135deg,#3b9eff,#8b5cf6,#06b6d4)",
-              padding: 3,
-              boxShadow: "0 0 36px rgba(59,158,255,0.5), 0 0 72px rgba(139,92,246,0.3)",
-              animation: "float 4s ease-in-out infinite",
-            }}>
-              <img
-                src={PHOTO}
-                alt="Yash Gupta"
-                style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", border: "3px solid var(--bg)" }}
-              />
-            </div>
-            {/* Online dot */}
-            <div style={{ position: "absolute", bottom: 6, right: 6, width: 16, height: 16, borderRadius: "50%", background: "var(--green)", border: "3px solid var(--bg)", boxShadow: "0 0 12px var(--green)" }} />
-          </div>
-          {/* Name + title */}
-          <div>
-            <div style={{ fontSize: "clamp(30px,4vw,48px)", fontWeight: 700, letterSpacing: "-0.025em", lineHeight: 1.1 }}>
-              Yash Gupta
-            </div>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--blue)", marginTop: 8 }}>
-              Software Engineer · New Delhi, India
-            </div>
-          </div>
-        </div>
+      {/* ── LEFT COLUMN (60%) ── */}
+      <div style={{ flex: "0 0 58%", paddingRight: 48 }}>
 
-        {/* Badge */}
-        <div style={{ animation: "fadeUp 0.6s ease both", animationDelay: "0.1s" }}>
-          <span className="chip" style={{ marginBottom: 28, display: "inline-flex", borderColor: "rgba(16,185,129,0.35)", background: "rgba(16,185,129,0.07)" }}>
+        {/* Status badge */}
+        <div style={{ animation: "fadeUp 0.6s ease both", animationDelay: "0.05s", opacity: 0, marginBottom: 20 }}>
+          <span className="chip" style={{ display: "inline-flex", borderColor: "rgba(16,185,129,0.35)", background: "rgba(16,185,129,0.07)" }}>
             <span style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--green)", boxShadow: "0 0 8px var(--green)", animation: "pulseRing 2s ease infinite" }} />
             <span style={{ color: "var(--green)" }}>Open to Opportunities · 8th Sem CSE</span>
           </span>
         </div>
 
+        {/* Hi intro */}
+        <div style={{ animation: "fadeUp 0.6s ease both", animationDelay: "0.12s", opacity: 0, marginBottom: 6 }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 16, color: "var(--blue)" }}>Hi, I'm</span>
+        </div>
+
+        {/* Name only */}
+        <div style={{ animation: "fadeUp 0.6s ease both", animationDelay: "0.2s", opacity: 0, marginBottom: 4 }}>
+          <h2 style={{ fontSize: "clamp(40px,5.5vw,68px)", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1.05 }}>
+            Yash Gupta
+          </h2>
+        </div>
+
+        {/* Role */}
+        <div style={{ animation: "fadeUp 0.6s ease both", animationDelay: "0.28s", opacity: 0, marginBottom: 24 }}>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 14, color: "var(--dim)" }}>
+            Software Engineer · <span style={{ color: "var(--blue)" }}>New Delhi, India</span>
+          </span>
+        </div>
+
         {/* Headline */}
-        <h1 style={{ fontSize: "clamp(36px,6.5vw,74px)", fontWeight: 700, lineHeight: 1.08, letterSpacing: "-0.035em", marginBottom: 10 }}>
+        <h1 style={{ fontSize: "clamp(22px,3.2vw,38px)", fontWeight: 700, lineHeight: 1.2, letterSpacing: "-0.025em", marginBottom: 16, animation: "fadeUp 0.6s ease both", animationDelay: "0.36s", opacity: 0 }}>
           {words.map((w, i) => (
-            <span key={i} style={{ display: "inline-block", marginRight: "0.22em", animation: "fadeUp 0.6s ease both", animationDelay: `${0.18 + i * 0.09}s`, opacity: 0 }}>
+            <span key={i} style={{ display: "inline-block", marginRight: "0.2em" }}>
               {(i === 1 || i === 2) ? <span className="gt">{w}</span> : w}
             </span>
           ))}
         </h1>
 
         {/* Sub */}
-        <p style={{ fontSize: 15, color: "var(--dim)", maxWidth: 520, marginBottom: 28, lineHeight: 1.7, animation: "fadeUp 0.6s ease both", animationDelay: "0.82s", opacity: 0 }}>
+        <p style={{ fontSize: 14, color: "var(--dim)", maxWidth: 480, marginBottom: 20, lineHeight: 1.75, animation: "fadeUp 0.6s ease both", animationDelay: "0.44s", opacity: 0 }}>
           CS Undergrad <span style={{ color: "var(--blue)", fontWeight: 600 }}>@ Graphic Era Hill University</span>, Bhimtal ·{" "}
-          <span style={{ fontFamily: "var(--font-mono)", color: "var(--text)", fontSize: 13 }}>8.41 CGPA</span> · Backend & Systems Enthusiast.
+          <span style={{ fontFamily: "var(--font-mono)", color: "var(--text)", fontSize: 13 }}>8.41 CGPA</span> · Code. Build. Ship. Repeat.
         </p>
 
         {/* Currently building */}
-        <div style={{ animation: "fadeUp 0.6s ease both", animationDelay: "0.94s", opacity: 0, marginBottom: 36 }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "8px 16px", borderRadius: 8, border: "1px solid rgba(245,158,11,0.25)", background: "rgba(245,158,11,0.06)", fontSize: 12 }}>
-            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--amber)", animation: "blink 1.5s ease infinite" }} />
-            <span style={{ fontFamily: "var(--font-mono)", color: "var(--amber)" }}>Currently Building: </span>
+        <div style={{ animation: "fadeUp 0.6s ease both", animationDelay: "0.52s", opacity: 0, marginBottom: 28 }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "7px 14px", borderRadius: 8, border: "1px solid rgba(245,158,11,0.25)", background: "rgba(245,158,11,0.06)", fontSize: 12 }}>
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--amber)", animation: "blink 1.5s ease infinite", flexShrink: 0 }} />
+            <span style={{ fontFamily: "var(--font-mono)", color: "var(--amber)" }}>Building: </span>
             <span style={{ color: "var(--dim)" }}>AI-Driven Traffic Violation Detection System</span>
           </div>
         </div>
 
         {/* CTAs */}
-        <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 64, animation: "fadeUp 0.6s ease both", animationDelay: "1.06s", opacity: 0 }}>
+        <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 40, animation: "fadeUp 0.6s ease both", animationDelay: "0.6s", opacity: 0 }}>
           <a href="#projects" className="btn-p">
-            <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" strokeLinecap="round" strokeLinejoin="round"/></svg>
             View Projects
           </a>
           <a href="https://github.com/YASHGUPTA11122004" target="_blank" rel="noopener" className="btn-g">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             GitHub
           </a>
           <a href="https://linkedin.com/in/yashgupta11122004" target="_blank" rel="noopener" className="btn-g">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn
           </a>
           <a href="https://drive.google.com/file/d/1w8IwRzTqEJP5QccNCDxuK6njsAWu0Wgq/view?usp=sharing" target="_blank" rel="noopener" className="btn-g">
-            <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" strokeLinecap="round" strokeLinejoin="round"/></svg>
             Résumé
           </a>
         </div>
 
-        <div style={{ animation: "fadeUp 0.6s ease both", animationDelay: "1.2s", opacity: 0 }}>
+        {/* Terminal */}
+        <div style={{ animation: "fadeUp 0.6s ease both", animationDelay: "0.72s", opacity: 0 }}>
           <Terminal />
         </div>
       </div>
 
-      {/* Floating stats — desktop only */}
-      <div style={{ position: "absolute", right: 48, top: "50%", transform: "translateY(-50%)", display: "flex", flexDirection: "column", gap: 16 }} className="hs">
-        {[
-          { val: 8.41, suf: "", label: "CGPA", color: "var(--blue)", dec: 2 },
-          { val: 500, suf: "+", label: "Problems Solved", color: "var(--purple)", dec: 0 },
-          { val: 100, suf: "d", label: "Streak Badge", color: "var(--green)", dec: 0 },
-        ].map((s, i) => (
-          <div key={s.label} style={{ padding: "16px 22px", borderRadius: 12, border: "1px solid var(--border)", background: "var(--surface)", textAlign: "center", backdropFilter: "blur(12px)", animation: `float ${4 + i * 0.6}s ease-in-out infinite`, animationDelay: `${i * 0.4}s` }}>
-            <div style={{ fontSize: 26, fontWeight: 700, color: s.color, lineHeight: 1 }}>
-              <Counter target={s.val} suffix={s.suf} decimals={s.dec} />
-            </div>
-            <div style={{ fontSize: 10, color: "var(--muted)", marginTop: 4, fontWeight: 500, fontFamily: "var(--font-mono)" }}>{s.label}</div>
+      {/* ── RIGHT COLUMN (40%) ── */}
+      <div style={{ flex: "0 0 42%", display: "flex", flexDirection: "column", alignItems: "center", gap: 28, animation: "fadeIn 0.8s ease both", animationDelay: "0.4s", opacity: 0 }}>
+
+        {/* Big Photo */}
+        <div style={{ position: "relative" }}>
+          {/* Outer glow ring */}
+          <div style={{
+            width: 260, height: 260, borderRadius: "50%",
+            background: "linear-gradient(135deg,#3b9eff,#8b5cf6,#06b6d4)",
+            padding: 4,
+            boxShadow: "0 0 60px rgba(59,158,255,0.4), 0 0 100px rgba(139,92,246,0.25)",
+            animation: "float 5s ease-in-out infinite",
+          }}>
+            <img
+              src={PHOTO}
+              alt="Yash Gupta"
+              style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", objectPosition: "center top", border: "4px solid var(--bg)" }}
+            />
           </div>
-        ))}
+          {/* Online dot */}
+          <div style={{ position: "absolute", bottom: 16, right: 16, width: 20, height: 20, borderRadius: "50%", background: "var(--green)", border: "4px solid var(--bg)", boxShadow: "0 0 14px var(--green)" }} />
+          {/* Decorative ring */}
+          <div style={{ position: "absolute", inset: -12, borderRadius: "50%", border: "1px dashed rgba(59,158,255,0.25)", animation: "spin 20s linear infinite" }} />
+        </div>
+
+        {/* Stats grid under photo */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, width: "100%", maxWidth: 280 }}>
+          {stats.map((s, i) => (
+            <div key={s.label} style={{
+              padding: "14px 16px", borderRadius: 12,
+              border: "1px solid var(--border)", background: "var(--surface)",
+              textAlign: "center", backdropFilter: "blur(12px)",
+              animation: `float ${4 + i * 0.5}s ease-in-out infinite`,
+              animationDelay: `${i * 0.3}s`,
+              transition: "border-color 0.2s",
+            }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = s.color}
+              onMouseLeave={e => e.currentTarget.style.borderColor = ""}
+            >
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: 22, fontWeight: 700, color: s.color, lineHeight: 1 }}>
+                <Counter target={s.val} suffix={s.suf} decimals={s.dec} />
+              </div>
+              <div style={{ fontSize: 10, color: "var(--muted)", marginTop: 4, fontFamily: "var(--font-mono)" }}>{s.label}</div>
+            </div>
+          ))}
+        </div>
       </div>
-      <style>{`.hs{animation:fadeIn 1s ease both;animation-delay:1.4s;opacity:0}@media(max-width:960px){.hs{display:none !important}}`}</style>
+
+      {/* Mobile responsive */}
+      <style>{`
+        @media(max-width:900px){
+          #hero { flex-direction: column !important; padding-top: 100px !important; }
+          #hero > div:first-child { padding-right: 0 !important; flex: unset !important; }
+          #hero > div:last-child { flex: unset !important; width: 100% !important; }
+          #hero > div:last-child > div:first-child > div:first-child { width: 180px !important; height: 180px !important; }
+          .name-avatar { display: none !important; }
+        }
+      `}</style>
     </section>
   );
 };
