@@ -1,4 +1,3 @@
-"use client";
 import { useState, useEffect, useRef } from "react";
 
 /* ═══════════════════════════════════════════════════════════════
@@ -256,21 +255,25 @@ const Terminal = () => {
     if (phase === "wait") { const t = setTimeout(() => { setHistory(h => [...h.slice(-3), { cmd: cmds[idx].cmd, out: cmds[idx].out }]); setIdx(i => (i + 1) % cmds.length); setText(""); setShowOut(false); setPhase("typing"); }, 1800); return () => clearTimeout(t); }
   }, [text, phase, idx]);
   return (
-    <div className="gc" style={{ padding: "22px 26px", background: "rgba(0,0,0,0.72)", border: "1px solid rgba(255,255,255,0.1)", maxWidth: 500, width: "100%", position: "relative" }}>
+    <div className="gc" style={{ padding: "22px 26px", background: "rgba(0,0,0,0.72)", border: "1px solid rgba(255,255,255,0.1)", maxWidth: 500, width: "100%", position: "relative", height: "260px", overflow: "hidden", display: "flex", flexDirection: "column" }}>
       <div style={{ position: "absolute", left: 0, right: 0, height: 1, background: "linear-gradient(90deg,transparent,rgba(59,158,255,0.4),transparent)", animation: "scanline 2.8s linear infinite", pointerEvents: "none" }} />
-      <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 18 }}>
+      {/* Title bar */}
+      <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 18, flexShrink: 0 }}>
         {["#ff5f57", "#febc2e", "#28c840"].map(c => <div key={c} style={{ width: 11, height: 11, borderRadius: "50%", background: c }} />)}
         <span style={{ marginLeft: 10, fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--muted)" }}>yash@gehu — bash</span>
       </div>
-      {history.map((h, i) => (
-        <div key={i} style={{ marginBottom: 8, opacity: Math.max(0.12, 0.45 - i * 0.1) }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: 12 }}><span style={{ color: "var(--green)" }}>yash</span><span style={{ color: "var(--blue)" }}>@dev</span><span style={{ color: "var(--dim)" }}>:~$ </span><span style={{ color: "#e2e8f0" }}>{h.cmd}</span></div>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--muted)", paddingLeft: 4 }}>{h.out}</div>
+      {/* Content area — fixed, no layout shift */}
+      <div style={{ flex: 1, overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
+        {history.map((h, i) => (
+          <div key={i} style={{ marginBottom: 6, opacity: Math.max(0.12, 0.4 - i * 0.1), flexShrink: 0 }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 11.5 }}><span style={{ color: "var(--green)" }}>yash</span><span style={{ color: "var(--blue)" }}>@dev</span><span style={{ color: "var(--dim)" }}>:~$ </span><span style={{ color: "#e2e8f0" }}>{h.cmd}</span></div>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--muted)", paddingLeft: 4 }}>{h.out}</div>
+          </div>
+        ))}
+        <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, flexShrink: 0 }}>
+          <div><span style={{ color: "var(--green)" }}>yash</span><span style={{ color: "var(--blue)" }}>@dev</span><span style={{ color: "var(--dim)" }}>:~$ </span><span style={{ color: "#e2e8f0" }}>{text}</span><span style={{ display: "inline-block", width: 7, height: 15, background: "var(--blue)", marginLeft: 1, verticalAlign: "middle", animation: "blink 1s step-end infinite" }} /></div>
+          {showOut && <div style={{ fontFamily: "var(--font-mono)", fontSize: 11.5, color: "var(--green)", paddingLeft: 4, marginTop: 4, animation: "fadeIn 0.3s ease" }}>{cmds[idx].out}</div>}
         </div>
-      ))}
-      <div style={{ fontFamily: "var(--font-mono)", fontSize: 13 }}>
-        <div><span style={{ color: "var(--green)" }}>yash</span><span style={{ color: "var(--blue)" }}>@dev</span><span style={{ color: "var(--dim)" }}>:~$ </span><span style={{ color: "#e2e8f0" }}>{text}</span><span style={{ display: "inline-block", width: 7, height: 15, background: "var(--blue)", marginLeft: 1, verticalAlign: "middle", animation: "blink 1s step-end infinite" }} /></div>
-        {showOut && <div style={{ fontFamily: "var(--font-mono)", fontSize: 11.5, color: "var(--green)", paddingLeft: 4, marginTop: 4, animation: "fadeIn 0.3s ease" }}>{cmds[idx].out}</div>}
       </div>
     </div>
   );
