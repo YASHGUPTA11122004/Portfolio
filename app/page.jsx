@@ -1,31 +1,46 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 
-const GlobalStyles = ({ dark }) => (
+const GlobalStyles = () => (
   <style>{`
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ── DARK (default) ── */
     :root {
-      --bg: ${dark ? "#050505" : "#f4f6fb"};
-      --surface: ${dark ? "rgba(255,255,255,0.028)" : "rgba(255,255,255,0.85)"};
-      --surface-2: ${dark ? "rgba(255,255,255,0.05)" : "rgba(255,255,255,0.95)"};
-      --border: ${dark ? "rgba(255,255,255,0.075)" : "rgba(0,0,0,0.08)"};
-      --border-bright: ${dark ? "rgba(99,179,255,0.45)" : "rgba(59,158,255,0.6)"};
+      --bg: #050505;
+      --surface: rgba(255,255,255,0.028);
+      --surface-2: rgba(255,255,255,0.05);
+      --border: rgba(255,255,255,0.075);
+      --border-bright: rgba(99,179,255,0.45);
       --blue: #3b9eff;
       --purple: #8b5cf6;
       --cyan: #06b6d4;
       --green: #10b981;
       --amber: #f59e0b;
-      --text: ${dark ? "#efefef" : "#0f1117"};
-      --muted: ${dark ? "#555" : "#aaa"};
-      --dim: ${dark ? "#888" : "#666"};
+      --text: #efefef;
+      --muted: #555;
+      --dim: #888;
       --font-sans: 'Space Grotesk', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
       --r: 16px;
-      --nav-bg: ${dark ? "rgba(5,5,5,0.9)" : "rgba(244,246,251,0.92)"};
-      --mobile-menu-bg: ${dark ? "rgba(5,5,5,0.97)" : "rgba(244,246,251,0.98)"};
+      --nav-bg: rgba(5,5,5,0.9);
+      --mobile-menu-bg: rgba(5,5,5,0.97);
+    }
+
+    /* ── LIGHT ── */
+    [data-theme="light"] {
+      --bg: #f0f4ff;
+      --surface: rgba(255,255,255,0.8);
+      --surface-2: rgba(255,255,255,0.95);
+      --border: rgba(0,0,0,0.09);
+      --border-bright: rgba(59,158,255,0.55);
+      --text: #0d1117;
+      --muted: #999;
+      --dim: #555;
+      --nav-bg: rgba(240,244,255,0.92);
+      --mobile-menu-bg: rgba(240,244,255,0.98);
     }
 
     html { scroll-behavior: smooth; }
@@ -37,7 +52,7 @@ const GlobalStyles = ({ dark }) => (
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       cursor: none;
-      transition: background 0.4s ease, color 0.4s ease;
+      transition: background 0.5s ease, color 0.5s ease;
     }
     @media (pointer: coarse) { body { cursor: auto; } }
 
@@ -783,9 +798,14 @@ const Contact = () => {
 export default function App() {
   const [dark, setDark] = useState(true);
   const active = useActive(["hero", "about", "work", "projects", "skills", "contact"]);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+  }, [dark]);
+
   return (
     <>
-      <GlobalStyles dark={dark} />
+      <GlobalStyles />
       <ScrollProgress />
       <Cursor />
       <Noise />
