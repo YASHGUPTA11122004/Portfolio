@@ -131,7 +131,7 @@ https://raw.githubusercontent.com/YASHGUPTA11122004/Portfolio/main/photo.jpeg
 |-------|-------|
 | Name | Yash Gupta |
 | Email | yashgupta11122004@gmail.com |
-| Phone | +91 92683 19936 |
+| Phone | +91 92XXX XXXX6 |
 | Location | New Delhi, India / Bhimtal, Uttarakhand |
 | College | Graphic Era Hill University (GEHU), Bhimtal |
 | Degree | B.Tech CSE — 2022–2026 |
