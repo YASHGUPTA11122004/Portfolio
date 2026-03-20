@@ -1,7 +1,5 @@
 # 🗂️ TECHNICAL.md — Yash Gupta Portfolio
 
-> **Kisi bhi AI ko yeh file do + relevant code files do — vo poora context samajh kar changes kar payega.**
-
 ---
 
 ## 📁 Project Structure
