@@ -638,12 +638,86 @@ const Projects = () => {
 
 const Skills = () => {
   const groups = [
-    { label: "Languages", color: "var(--blue)", items: [{ n: "Python", p: 90 }, { n: "Java", p: 85 }, { n: "JavaScript", p: 78 }, { n: "C++", p: 80 }, { n: "C", p: 75 }, { n: "SQL", p: 82 }] },
-    { label: "Web Development", color: "var(--cyan)", items: [{ n: "React.js", p: 82 }, { n: "Django", p: 84 }, { n: "HTML5/CSS3", p: 88 }, { n: "REST APIs", p: 86 }] },
-    { label: "Databases", color: "var(--purple)", items: [{ n: "PostgreSQL", p: 80 }, { n: "MySQL", p: 78 }] },
-    { label: "AI / ML", color: "var(--amber)", items: [{ n: "TensorFlow", p: 70 }, { n: "OpenCV", p: 72 }, { n: "NumPy", p: 85 }, { n: "Pandas", p: 84 }] },
-    { label: "Tools & Cloud", color: "var(--green)", items: [{ n: "Git/GitHub", p: 90 }, { n: "Linux", p: 80 }, { n: "Docker", p: 68 }, { n: "Kubernetes", p: 62 }, { n: "GCP", p: 68 }, { n: "Figma", p: 65 }] },
-    { label: "Core CS", color: "#e879f9", items: [{ n: "DSA", p: 88 }, { n: "OOP", p: 90 }, { n: "OS", p: 82 }, { n: "DBMS", p: 84 }, { n: "CN", p: 78 }, { n: "Compiler Design", p: 80 }] },
+    {
+      label: "Languages",
+      color: "var(--blue)",
+      items: [
+        { n: "Python", p: 90 },
+        { n: "JavaScript", p: 84 },
+        { n: "Java", p: 82 },
+        { n: "C++", p: 78 },
+        { n: "C", p: 75 },
+        { n: "SQL", p: 82 },
+        { n: "TypeScript", p: 60 },
+      ]
+    },
+    {
+      label: "Web Development",
+      color: "var(--cyan)",
+      items: [
+        { n: "React.js", p: 85 },
+        { n: "Django", p: 84 },
+        { n: "HTML5 / CSS3", p: 88 },
+        { n: "REST APIs", p: 87 },
+        { n: "Tailwind CSS", p: 78 },
+        { n: "Node.js", p: 62 },
+        { n: "Vite", p: 72 },
+      ]
+    },
+    {
+      label: "Databases",
+      color: "var(--purple)",
+      items: [
+        { n: "PostgreSQL", p: 80 },
+        { n: "MySQL", p: 78 },
+      ]
+    },
+    {
+      label: "AI / ML",
+      color: "var(--amber)",
+      items: [
+        { n: "TensorFlow", p: 70 },
+        { n: "OpenCV", p: 72 },
+        { n: "NumPy", p: 86 },
+        { n: "Pandas", p: 84 },
+        { n: "Scikit-learn", p: 65 },
+      ]
+    },
+    {
+      label: "DevOps & Cloud",
+      color: "var(--green)",
+      items: [
+        { n: "Git / GitHub", p: 92 },
+        { n: "Linux", p: 80 },
+        { n: "Docker", p: 68 },
+        { n: "Kubernetes", p: 62 },
+        { n: "GCP", p: 68 },
+        { n: "GitHub Actions", p: 65 },
+      ]
+    },
+    {
+      label: "Platforms & Deploy",
+      color: "#06b6d4",
+      items: [
+        { n: "Vercel", p: 88 },
+        { n: "Cloudflare Pages", p: 78 },
+        { n: "GitHub Pages", p: 85 },
+        { n: "Render", p: 72 },
+        { n: "Figma", p: 65 },
+      ]
+    },
+    {
+      label: "Core CS",
+      color: "#e879f9",
+      items: [
+        { n: "DSA", p: 88 },
+        { n: "OOP", p: 90 },
+        { n: "OS", p: 82 },
+        { n: "DBMS", p: 84 },
+        { n: "CN", p: 78 },
+        { n: "Compiler Design", p: 80 },
+      ]
+    },
   ];
   const Bar = ({ name, pct, color }) => {
     const ref = useRef(null);
