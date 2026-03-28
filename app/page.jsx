@@ -574,10 +574,12 @@ const Projects = () => {
   const [filter, setFilter] = useState("All");
   const tags = ["All", "Python", "React", "JavaScript", "AI/ML"];
   const projects = [
-    { name: "CodeBox", emoji: "📦", stack: ["React.js", "Django", "Python", "REST API", "AST"], tags: ["React", "Python"], desc: "Educational compiler tool for pseudocode and syntax tree generation. Enabled live debugging and AST visualization used by 100+ students in compiler lab.", badge: "100+ Students", badgeColor: "var(--green)", highlight: "React + Django · Live AST Visualization", github: "https://github.com/Yash-Git2004/compiler", live: null, featured: true, period: "Feb 2025 – Jun 2025" },
-    { name: "Process Management System", emoji: "⚙️", stack: ["Python", "Queues", "OS Concepts", "CLI"], tags: ["Python"], desc: "Simulated FCFS and Round Robin CPU scheduling in Python with real-time process state visuals. Used queues and data structures for CPU cycle management.", badge: "OS Simulator", badgeColor: "var(--purple)", highlight: "Scheduling Algorithm Visualization", github: "https://github.com/Geet9337/software_en", live: null, featured: false, period: "Aug 2024 – Feb 2025" },
-    { name: "Weather Dashboard", emoji: "🌤", stack: ["JavaScript", "OpenWeather API", "Async/Await", "JSON"], tags: ["JavaScript"], desc: "Live weather dashboard using OpenWeather API with responsive UI, multi-city toggle, and async API handling. Practiced RESTful design and JSON parsing.", badge: "Live API", badgeColor: "var(--cyan)", highlight: "OpenWeather API · Async JavaScript", github: null, live: null, featured: false, period: "Nov 2023 – Dec 2023" },
-    { name: "AI Biometrics Research", emoji: "🔬", stack: ["Python", "TensorFlow", "OpenCV", "CNN", "NumPy"], tags: ["AI/ML", "Python"], desc: "Deep learning model for AI-based biometric pattern recognition. Published in IEEE Xplore at ICECAA 2023. Focused on accuracy improvements under real-world conditions.", badge: "IEEE Published", badgeColor: "var(--amber)", highlight: "Published · IEEE Xplore · ICECAA 2023", github: null, live: "https://ieeexplore.ieee.org", featured: true, period: "2023" },
+    { name: "CodeBox", emoji: "📦", stack: ["React.js", "Django", "Python", "REST API", "AST"], tags: ["React", "Python"], desc: "Educational compiler tool for pseudocode and syntax tree generation. Enabled live debugging and AST visualization used by 100+ students in compiler lab.", badge: "100+ Students", badgeColor: "var(--green)", highlight: "React + Django · Live AST Visualization", github: "https://github.com/YASHGUPTA11122004/CodeBox", live: "https://codebox-rho.vercel.app", featured: true, period: "Feb 2025 – Jun 2025" },
+    { name: "OS Simulator", emoji: "⚙️", stack: ["Python", "Queues", "OS Concepts", "Vercel"], tags: ["Python"], desc: "Visual simulation of FCFS and Round Robin CPU scheduling with real-time process state visuals. Interactive Gantt charts and performance metrics.", badge: "Live Demo", badgeColor: "var(--purple)", highlight: "Scheduling Algorithm Visualization", github: "https://github.com/YASHGUPTA11122004/OS-Simulator", live: "https://os-simulator-black.vercel.app", featured: false, period: "Aug 2024 – Feb 2025" },
+    { name: "Nimbus Weather", emoji: "🌤", stack: ["JavaScript", "OpenWeather API", "Async/Await", "GitHub Pages"], tags: ["JavaScript"], desc: "Live weather dashboard using OpenWeather API with responsive UI, multi-city toggle, and async API handling. Deployed on GitHub Pages.", badge: "Live API", badgeColor: "var(--cyan)", highlight: "OpenWeather API · Async JavaScript", github: "https://github.com/YASHGUPTA11122004/Nimbus-Weather", live: "https://yashgupta11122004.github.io/Nimbus-Weather/", featured: false, period: "Nov 2023 – Dec 2023" },
+    { name: "Instant Tech News Radar", emoji: "📡", stack: ["React 18", "Vite 5", "Cloudflare Pages", "HackerNews API"], tags: ["React", "JavaScript"], desc: "Real-time Hacker News aggregator with Cloudflare edge computing. Features live feeds, bookmarks, keyboard shortcuts, 90s auto-refresh and dark/light mode.", badge: "Live · Edge", badgeColor: "var(--amber)", highlight: "Cloudflare Edge Functions · Real-time Feed", github: "https://github.com/YASHGUPTA11122004/Instant-tech-news-radar", live: "https://itnr.pages.dev", featured: true, period: "2024" },
+    { name: "Supreme AI", emoji: "🤖", stack: ["React.js", "AI APIs", "Vercel"], tags: ["React", "AI/ML"], desc: "AI-powered assistant interface with modern UI, multi-model support and intelligent conversation flows. Currently in active development.", badge: "In Development", badgeColor: "var(--blue)", highlight: "AI Assistant · Actively Building", github: "https://github.com/YASHGUPTA11122004/supreme-ai", live: "https://supreme-ai-eta.vercel.app/", featured: false, period: "2025 – Present" },
+    { name: "AI Biometrics Research", emoji: "🔬", stack: ["Python", "TensorFlow", "OpenCV", "CNN", "NumPy"], tags: ["AI/ML", "Python"], desc: "Deep learning model for AI-based biometric pattern recognition. Published in IEEE Xplore at ICECAA 2023. Focused on accuracy improvements under real-world conditions.", badge: "IEEE Published", badgeColor: "var(--amber)", highlight: "Published · IEEE Xplore · ICECAA 2023", github: null, live: "https://ieeexplore.ieee.org/abstract/document/10212224", featured: true, period: "2023" },
   ];
   const filtered = filter === "All" ? projects : projects.filter(p => p.tags.includes(filter));
   return (
@@ -612,9 +614,19 @@ const Projects = () => {
                 {p.stack.map(s => <span key={s} className="chip">{s}</span>)}
               </div>
               <div style={{ display: "flex", gap: 8, marginTop: "auto" }}>
-                {p.github && <a href={p.github} target="_blank" rel="noopener" className="btn-g" style={{ flex: 1, justifyContent: "center", fontSize: 12 }}><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</a>}
-                {p.live && <a href={p.live} target="_blank" rel="noopener" className="btn-g" style={{ flex: 1, justifyContent: "center", fontSize: 12 }}>View ↗</a>}
-                {!p.github && !p.live && <div className="btn-g" style={{ flex: 1, justifyContent: "center", fontSize: 12, opacity: 0.5, cursor: "default" }}>Private / Research</div>}
+                {p.github && <a href={p.github} target="_blank" rel="noopener" style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 7, padding: "10px 16px", borderRadius: 10, fontSize: 12, fontWeight: 500, fontFamily: "var(--font-mono)", textDecoration: "none", border: "1px solid var(--border)", background: "var(--surface)", color: "var(--dim)", transition: "all 0.25s cubic-bezier(.22,1,.36,1)" }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.3)"; e.currentTarget.style.background = "rgba(255,255,255,0.07)"; e.currentTarget.style.color = "var(--text)"; e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.2)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = ""; e.currentTarget.style.background = ""; e.currentTarget.style.color = ""; e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = ""; }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  GitHub
+                </a>}
+                {p.live && <a href={p.live} target="_blank" rel="noopener" style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 7, padding: "10px 16px", borderRadius: 10, fontSize: 12, fontWeight: 500, fontFamily: "var(--font-mono)", textDecoration: "none", border: "1px solid rgba(59,158,255,0.25)", background: "rgba(59,158,255,0.05)", color: "var(--blue)", transition: "all 0.25s cubic-bezier(.22,1,.36,1)" }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(59,158,255,0.6)"; e.currentTarget.style.background = "rgba(59,158,255,0.14)"; e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(59,158,255,0.22)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = ""; e.currentTarget.style.background = ""; e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = ""; }}>
+                  <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  Live
+                </a>}
+                {!p.github && !p.live && <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "10px 16px", borderRadius: 10, fontSize: 12, fontFamily: "var(--font-mono)", border: "1px solid var(--border)", background: "var(--surface)", color: "var(--muted)", opacity: 0.5 }}>Private / Research</div>}
               </div>
             </GC>
           </Reveal>
@@ -698,12 +710,12 @@ const Contact = () => {
   const email = "yashgupta11122004@gmail.com";
   const copy = async () => { await navigator.clipboard.writeText(email); setCopied(true); setTimeout(() => setCopied(false), 2200); };
   const socials = [
-    { label: "GitHub", url: "https://github.com/YASHGUPTA11122004" },
-    { label: "LinkedIn", url: "https://linkedin.com/in/yashgupta11122004" },
-    { label: "LeetCode", url: "https://leetcode.com/u/yashgupta11122004/" },
-    { label: "GFG", url: "https://www.geeksforgeeks.org/profile/yashguptaidtb" },
-    { label: "CodeChef", url: "https://www.codechef.com/users/yashgupta_04" },
-    { label: "IEEE", url: "https://ieeexplore.ieee.org" },
+    { label: "GitHub", url: "https://github.com/YASHGUPTA11122004", color: "var(--text)" },
+    { label: "LinkedIn", url: "https://linkedin.com/in/yashgupta11122004", color: "#0a66c2" },
+    { label: "LeetCode", url: "https://leetcode.com/u/yashgupta11122004/", color: "#ffa116" },
+    { label: "GFG", url: "https://www.geeksforgeeks.org/profile/yashguptaidtb", color: "#2f8d46" },
+    { label: "CodeChef", url: "https://www.codechef.com/users/yashgupta_04", color: "#5b4638" },
+    { label: "IEEE", url: "https://ieeexplore.ieee.org/abstract/document/10212224", color: "#00629b" },
   ];
   return (
     <section id="contact" style={{ padding: "80px 48px 100px", maxWidth: 1200, margin: "0 auto" }}>
@@ -721,11 +733,34 @@ const Contact = () => {
             <a href={`mailto:${email}`} className="btn-g"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round"/></svg>yashgupta11122004@gmail.com</a>
             <a href="tel:+919268319936" className="btn-g"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" strokeLinecap="round" strokeLinejoin="round"/></svg>+91 92683 19936</a>
           </div>
-          <div style={{ paddingTop: 32, borderTop: "1px solid var(--border)", display: "flex", gap: 24, justifyContent: "center", flexWrap: "wrap" }}>
+          <div style={{ paddingTop: 32, borderTop: "1px solid var(--border)", display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             {socials.map(l => (
-              <a key={l.label} href={l.url} target="_blank" rel="noopener" style={{ fontSize: 13, color: "var(--muted)", textDecoration: "none", transition: "color 0.2s", fontWeight: 500, fontFamily: "var(--font-mono)" }}
-                onMouseEnter={e => e.currentTarget.style.color = "var(--text)"}
-                onMouseLeave={e => e.currentTarget.style.color = ""}>{l.label} ↗</a>
+              <a key={l.label} href={l.url} target="_blank" rel="noopener" style={{
+                fontSize: 12, fontFamily: "var(--font-mono)", fontWeight: 600,
+                textDecoration: "none", color: "var(--dim)",
+                padding: "10px 20px", borderRadius: 10,
+                border: "1px solid var(--border)",
+                background: "var(--surface)",
+                transition: "all 0.25s cubic-bezier(.22,1,.36,1)",
+                display: "flex", alignItems: "center", gap: 6,
+              }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = l.color;
+                  e.currentTarget.style.color = l.color;
+                  e.currentTarget.style.background = `${l.color}11`;
+                  e.currentTarget.style.transform = "translateY(-3px)";
+                  e.currentTarget.style.boxShadow = `0 8px 24px ${l.color}22`;
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = "";
+                  e.currentTarget.style.color = "";
+                  e.currentTarget.style.background = "";
+                  e.currentTarget.style.transform = "";
+                  e.currentTarget.style.boxShadow = "";
+                }}
+              >
+                {l.label}
+              </a>
             ))}
           </div>
         </GC>
