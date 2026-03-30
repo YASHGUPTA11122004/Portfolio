@@ -1,5 +1,7 @@
 # 🗂️ TECHNICAL.md — Yash Gupta Portfolio
 
+> **Kisi bhi AI ko yeh file do + relevant code files do — vo poora context samajh kar changes kar payega.**
+
 ---
 
 ## 📁 Project Structure
@@ -72,9 +74,9 @@ Poora portfolio **ek hi file** mein hai. Components is order mein hain:
 15. Hero                    ← HERO SECTION (Classic Split layout)
 16. Bento                   ← Proof of Work grid (IEEE, Coding, Cloud, CGPA)
 17. Experience              ← Timeline with glowing dots
-18. Projects                ← Filterable project cards with tilt effect
-19. Skills                  ← Animated progress bars + extra-curricular
-20. Contact                 ← Email copy + social links + footer
+18. Projects                ← Filterable project cards with tilt + hover effects
+19. Skills                  ← Animated progress bars + extra-curricular (7 categories)
+20. Contact                 ← Email copy + social boxes + footer
 21. App (default export)    ← Root — manages dark/light state
 ```
 
@@ -84,46 +86,34 @@ Poora portfolio **ek hi file** mein hai. Components is order mein hain:
 
 ### CSS Variables (defined in `globals.css`)
 ```css
-/* Backgrounds */
 --bg              ← page background
 --surface         ← card background
 --surface-2       ← elevated card background
-
-/* Borders */
 --border          ← default border
 --border-bright   ← hover/active border
-
-/* Accent Colors (same in both themes) */
 --blue: #3b9eff
 --purple: #8b5cf6
 --cyan: #06b6d4
 --green: #10b981
 --amber: #f59e0b
-
-/* Text */
 --text            ← primary text
 --dim             ← secondary text
 --muted           ← tertiary/placeholder text
-
-/* Nav */
 --nav-bg          ← scrolled nav background
---mobile-menu-bg  ← mobile menu background
-
-/* Typography */
 --font-sans: Space Grotesk
 --font-mono: JetBrains Mono
---r: 16px (border radius)
+--r: 16px
 ```
 
 ### Key CSS Classes (in `GlobalStyles` inside `page.jsx`)
 ```
 .gc          → Glow card (mouse tracking radial gradient)
 .chip        → Pill badge
-.btn-p       → Primary gradient button (blue to purple)
+.btn-p       → Primary gradient button
 .btn-g       → Ghost/outline button
-.gt          → Gradient shimmer text (blue to purple to cyan)
-.reveal      → Scroll reveal (add .visible to trigger)
-nav.scrolled → Frosted glass navbar on scroll
+.gt          → Gradient shimmer text
+.reveal      → Scroll reveal
+nav.scrolled → Frosted glass navbar
 ```
 
 ---
@@ -133,30 +123,26 @@ nav.scrolled → Frosted glass navbar on scroll
 **Classic Split — Left 58% / Right 42%**
 
 ```
-LEFT COLUMN (58%)              RIGHT COLUMN (42%)
-─────────────────────────────────────────────────
-[Open to Opportunities badge]  [Photo — 240px circle]
-Hi, I'm                        [gradient glow ring]
-Yash Gupta                     [spinning dashed ring]
-Software Engineer · Delhi      [green online dot]
+LEFT (58%)                       RIGHT (42%)
+────────────────────────────────────────────
+[Open to Opportunities badge]    [Photo 240px]
+Hi, I'm                          [glow ring]
+Yash Gupta                       [spin ring]
+Software Engineer · Delhi        [green dot]
 
-Engineering Scalable           [8.41 CGPA] [500+ Problems]
-Systems & Researching AI.      [100d Streak] [2 Internships]
+Engineering Scalable             [8.41][500+]
+Systems & Researching AI.        [100d][ 2  ]
 
 CS Undergrad @ GEHU · 8.41 CGPA
 Code. Build. Ship. Repeat.
 
 [Building: AI Traffic Detection...]
-
-[View Projects] [GitHub] [LinkedIn] [Resume]
-
-[Terminal Animation — fixed 260px height]
+[View Projects][GitHub][LinkedIn][Resume]
+[Terminal — fixed 260px]
 ```
 
 **Photo URL:**
-```
-https://raw.githubusercontent.com/YASHGUPTA11122004/Portfolio/main/photo.jpeg
-```
+`https://raw.githubusercontent.com/YASHGUPTA11122004/Portfolio/main/photo.jpeg`
 
 ---
 
@@ -166,7 +152,7 @@ https://raw.githubusercontent.com/YASHGUPTA11122004/Portfolio/main/photo.jpeg
 |-------|-------|
 | Name | Yash Gupta |
 | Email | yashgupta11122004@gmail.com |
-| Phone | +91 92XXX XXXX6 |
+| Phone | +91 92683 19936 |
 | Location | New Delhi, India / Bhimtal, Uttarakhand |
 | College | Graphic Era Hill University (GEHU), Bhimtal |
 | Degree | B.Tech CSE — 2022–2026 |
@@ -186,8 +172,8 @@ https://raw.githubusercontent.com/YASHGUPTA11122004/Portfolio/main/photo.jpeg
 | GFG | geeksforgeeks.org/profile/yashguptaidtb |
 | CodeChef | codechef.com/users/yashgupta_04 |
 | Resume | drive.google.com/file/d/1w8IwRzTqEJP5QccNCDxuK6njsAWu0Wgq/view |
-| IEEE | ieeexplore.ieee.org |
-| Live Site | portfolio-sdab.vercel.app |
+| IEEE Paper | ieeexplore.ieee.org/abstract/document/10212224 |
+| Live Portfolio | portfolio-sdab.vercel.app |
 
 ---
 
@@ -209,14 +195,77 @@ https://raw.githubusercontent.com/YASHGUPTA11122004/Portfolio/main/photo.jpeg
 
 ---
 
-## 🚀 Projects Data
+## 🚀 Projects Data (All 6)
 
-| Project | Stack | GitHub | Status |
-|---------|-------|--------|--------|
-| CodeBox | React + Django + AST | github.com/Yash-Git2004/compiler | Featured |
-| OS Simulator | Python + CLI | github.com/Geet9337/software_en | Public |
-| Weather Dashboard | JavaScript + OpenWeather API | No GitHub | Public |
-| AI Biometrics | TensorFlow + OpenCV + CNN | No GitHub | IEEE Published |
+### 1. CodeBox ⭐ Featured
+- Stack: React.js + Django + Python + REST API + AST
+- GitHub: github.com/YASHGUPTA11122004/CodeBox
+- Live: codebox-rho.vercel.app
+- Backend: codebox-895s.onrender.com
+- Period: Feb 2025 – Jun 2025
+- Badge: 100+ Students (green)
+
+### 2. OS Simulator
+- Stack: Python + Queues + OS Concepts + Vercel
+- GitHub: github.com/YASHGUPTA11122004/OS-Simulator
+- Live: os-simulator-black.vercel.app
+- Period: Aug 2024 – Feb 2025
+- Badge: Live Demo (purple)
+
+### 3. Nimbus Weather
+- Stack: JavaScript + OpenWeather API + GitHub Pages
+- GitHub: github.com/YASHGUPTA11122004/Nimbus-Weather
+- Live: yashgupta11122004.github.io/Nimbus-Weather/
+- Period: Nov 2023 – Dec 2023
+- Badge: Live API (cyan)
+
+### 4. Instant Tech News Radar ⭐ Featured
+- Stack: React 18 + Vite 5 + Cloudflare Pages + HackerNews API
+- GitHub: github.com/YASHGUPTA11122004/Instant-tech-news-radar
+- Live: itnr.pages.dev
+- Period: 2024
+- Badge: Live · Edge (amber)
+- Deploy: Cloudflare Pages (NOT Vercel) — has its own TECHNICAL.md
+
+### 5. Supreme AI
+- Stack: React.js + AI APIs + Vercel
+- GitHub: github.com/YASHGUPTA11122004/supreme-ai
+- Live: supreme-ai-eta.vercel.app
+- Period: 2025 – Present
+- Badge: In Development (blue)
+- Status: Actively being built
+
+### 6. AI Biometrics Research ⭐ Featured
+- Stack: Python + TensorFlow + OpenCV + CNN + NumPy
+- GitHub: None (research paper)
+- Live: ieeexplore.ieee.org/abstract/document/10212224
+- Period: 2023
+- Badge: IEEE Published (amber)
+
+---
+
+## 🛠️ Skills Data (7 Categories)
+
+### Languages
+Python 90% · JavaScript 84% · Java 82% · C++ 78% · C 75% · SQL 82% · TypeScript 60%
+
+### Web Development
+React.js 85% · Django 84% · HTML5/CSS3 88% · REST APIs 87% · Tailwind CSS 78% · Node.js 62% · Vite 72%
+
+### Databases
+PostgreSQL 80% · MySQL 78%
+
+### AI / ML
+TensorFlow 70% · OpenCV 72% · NumPy 86% · Pandas 84% · Scikit-learn 65%
+
+### DevOps & Cloud
+Git/GitHub 92% · Linux 80% · Docker 68% · Kubernetes 62% · GCP 68% · GitHub Actions 65%
+
+### Platforms & Deploy ← NEW
+Vercel 88% · Cloudflare Pages 78% · GitHub Pages 85% · Render 72% · Figma 65%
+
+### Core CS
+DSA 88% · OOP 90% · OS 82% · DBMS 84% · CN 78% · Compiler Design 80%
 
 ---
 
@@ -239,8 +288,7 @@ https://raw.githubusercontent.com/YASHGUPTA11122004/Portfolio/main/photo.jpeg
 ---
 
 ## 🌐 Google Cloud Badges
-- Kubernetes, BigQuery, IAM, Cloud Run, Pub/Sub
-- Cohort 1 & 2 completed
+Kubernetes · BigQuery · IAM · Cloud Run · Pub/Sub — Cohort 1 & 2
 
 ---
 
@@ -248,6 +296,7 @@ https://raw.githubusercontent.com/YASHGUPTA11122004/Portfolio/main/photo.jpeg
 - Title: "The Role of Artificial Intelligence in Biometrics"
 - Conference: ICECAA 2023 (2nd Int. Conf. on Edge Computing & Applications)
 - Published: IEEE Xplore, July 2023
+- Link: ieeexplore.ieee.org/abstract/document/10212224
 
 ---
 
@@ -284,11 +333,11 @@ Mujhe [YEH CHANGE] karni hai..."
 | Currently Building | page.jsx | "Building:" |
 | Tagline | page.jsx | "Code. Build. Ship." |
 | Projects add/edit | page.jsx | const projects = [ |
-| Skills edit | page.jsx | const groups = [ |
+| Skills add/edit | page.jsx | const groups = [ |
 | Stats numbers | page.jsx | const stats = [ |
 | Experience edit | page.jsx | const jobs = [ |
 | Contact links | page.jsx | const socials = [ |
-| Fonts | layout.js | googleapis.com link |
+| Fonts | layout.js | googleapis.com |
 | Page title/meta | layout.js | export const metadata |
 
 ---
@@ -296,10 +345,11 @@ Mujhe [YEH CHANGE] karni hai..."
 ## ⚠️ Important Rules
 
 1. **`page.jsx` ki pehli line hamesha `"use client";` honi chahiye** — warna Vercel build fail
-2. **Theme flash fix:** `layout.js` mein `<html data-theme="dark">` hona chahiye — server-side default
-3. **CSS variables:** `globals.css` mein hain — `page.jsx` ki GlobalStyles mein mat daalo
-4. **Single file:** Sab kuch `page.jsx` mein hai — alag components mat banao
-5. **Inline styles:** Tailwind nahi — pure inline CSS use hoti hai components mein
+2. **Theme flash fix:** `layout.js` mein `<html data-theme="dark">` hona chahiye
+3. **CSS variables:** `globals.css` mein hain — `page.jsx` mein mat daalo
+4. **Single file:** Sab kuch `page.jsx` mein hai
+5. **Inline styles:** Tailwind nahi — pure inline CSS use hoti hai
+6. **Project buttons:** GitHub = grey hover, Live = blue hover — dono translateY(-2px) on hover
 
 ---
 
@@ -313,7 +363,7 @@ GitHub push → Vercel auto-detect Next.js → Build → Live
 - Branch: main
 - Framework: Next.js (auto-detected)
 - Root Directory: ./
-- Build: npm run build (auto)
+- Live: portfolio-sdab.vercel.app
 
 ---
 
