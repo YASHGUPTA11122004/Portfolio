@@ -298,7 +298,7 @@ const Hero = () => {
   const words = ["Engineering", "Scalable", "Systems", "&", "Researching", "AI."];
   const PHOTO = "https://raw.githubusercontent.com/YASHGUPTA11122004/Portfolio/main/photo.jpeg";
   const stats = [
-    { val: 8.41, suf: "", label: "CGPA", color: "var(--blue)", dec: 2 },
+    { val: 8.29, suf: "", label: "CGPA", color: "var(--blue)", dec: 2 },
     { val: 500, suf: "+", label: "Problems", color: "var(--purple)", dec: 0 },
     { val: 100, suf: "d", label: "Streak", color: "var(--green)", dec: 0 },
     { val: 2, suf: "", label: "Internships", color: "var(--amber)", dec: 0 },
@@ -332,13 +332,13 @@ const Hero = () => {
         </h1>
         <p style={{ fontSize: 14, color: "var(--dim)", maxWidth: 480, marginBottom: 20, lineHeight: 1.75, animation: "fadeUp 0.6s ease both", animationDelay: "0.44s", opacity: 0 }}>
           CS Undergrad <span style={{ color: "var(--blue)", fontWeight: 600 }}>@ Graphic Era Hill University</span>, Bhimtal ·{" "}
-          <span style={{ fontFamily: "var(--font-mono)", color: "var(--text)", fontSize: 13 }}>8.41 CGPA</span> · Code. Build. Ship. Repeat.
+          <span style={{ fontFamily: "var(--font-mono)", color: "var(--text)", fontSize: 13 }}>8.29 CGPA</span> · Code. Build. Ship. Repeat.
         </p>
         <div style={{ animation: "fadeUp 0.6s ease both", animationDelay: "0.52s", opacity: 0, marginBottom: 28 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "7px 14px", borderRadius: 8, border: "1px solid rgba(245,158,11,0.25)", background: "rgba(245,158,11,0.06)", fontSize: 12 }}>
             <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--amber)", animation: "blink 1.5s ease infinite", flexShrink: 0 }} />
             <span style={{ fontFamily: "var(--font-mono)", color: "var(--amber)" }}>Building: </span>
-            <span style={{ color: "var(--dim)" }}>AI-Driven Traffic Violation Detection System</span>
+            <span style={{ color: "var(--dim)" }}>Exploring open-source & new AI/ML projects</span>
           </div>
         </div>
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 40, animation: "fadeUp 0.6s ease both", animationDelay: "0.6s", opacity: 0 }}>
@@ -490,11 +490,11 @@ const Bento = () => {
             <div style={{ display: "flex", alignItems: "center", gap: 40, flexWrap: "wrap" }}>
               <div>
                 <div style={{ fontSize: 11, color: "var(--muted)", fontFamily: "var(--font-mono)", marginBottom: 6 }}>academic performance</div>
-                <div style={{ fontSize: 60, fontWeight: 700, lineHeight: 1 }}><span className="gt">8.41</span></div>
+                <div style={{ fontSize: 60, fontWeight: 700, lineHeight: 1 }}><span className="gt">8.29</span></div>
                 <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 6 }}>CGPA · GEHU Bhimtal · B.Tech CSE · 2022–2026</div>
               </div>
               <div style={{ flex: 1, minWidth: 200 }}>
-                {[["Year 1", 85.25], ["Year 2", 84.7], ["Year 3", 82.55], ["Year 4 (Sem 7)", 79.9]].map(([label, v]) => (
+                {[["Year 1", 85.25], ["Year 2", 84.7], ["Year 3", 82.55], ["Year 4", 77.4]].map(([label, v]) => (
                   <div key={label} style={{ marginBottom: 9 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", fontSize: 10, color: "var(--muted)", marginBottom: 4, fontFamily: "var(--font-mono)" }}><span>{label}</span><span>{v}%</span></div>
                     <div style={{ height: 4, background: "rgba(128,128,128,0.15)", borderRadius: 2, overflow: "hidden" }}>
@@ -574,6 +574,8 @@ const Projects = () => {
   const [filter, setFilter] = useState("All");
   const tags = ["All", "Python", "React", "JavaScript", "AI/ML"];
   const projects = [
+    { name: "Traffic Violation Detection System", emoji: "🚦", stack: ["Python", "YOLOv8", "EasyOCR", "Flask", "SQLite", "Docker"], tags: ["Python", "AI/ML"], desc: "AI-powered traffic violation detection system using YOLOv8 for real-time object detection and EasyOCR for license plate recognition. Auto-generates violation reports with ReportLab.", badge: "AI-Driven", badgeColor: "var(--green)", highlight: "YOLOv8 + EasyOCR · Real-time Detection", github: "https://github.com/YASHGUPTA11122004/Traffic-Violation-Detection-System", live: "https://huggingface.co/spaces/yashgupta11122004/traffic-violation-detection", featured: true, period: "2025 – 2026" },
+    { name: "This Portfolio", emoji: "🌐", stack: ["Next.js", "React.js", "Vercel", "CSS Variables"], tags: ["React", "JavaScript"], desc: "The very site you're on right now. Built with Next.js, featuring dark/light themes, scroll animations, glow cards, and a live terminal — all hand-coded from scratch.", badge: "You Are Here", badgeColor: "var(--cyan)", highlight: "Next.js · Dark/Light Theme · Animated UI", github: "https://github.com/YASHGUPTA11122004/Portfolio", live: "https://portfolio-sdab.vercel.app", featured: false, period: "2024 – Present" },
     { name: "CodeBox", emoji: "📦", stack: ["React.js", "Django", "Python", "REST API", "AST"], tags: ["React", "Python"], desc: "Educational compiler tool for pseudocode and syntax tree generation. Enabled live debugging and AST visualization used by 100+ students in compiler lab.", badge: "100+ Students", badgeColor: "var(--green)", highlight: "React + Django · Live AST Visualization", github: "https://github.com/YASHGUPTA11122004/CodeBox", live: "https://codebox-rho.vercel.app", featured: true, period: "Feb 2025 – Jun 2025" },
     { name: "OS Simulator", emoji: "⚙️", stack: ["Python", "Queues", "OS Concepts", "Vercel"], tags: ["Python"], desc: "Visual simulation of FCFS and Round Robin CPU scheduling with real-time process state visuals. Interactive Gantt charts and performance metrics.", badge: "Live Demo", badgeColor: "var(--purple)", highlight: "Scheduling Algorithm Visualization", github: "https://github.com/YASHGUPTA11122004/OS-Simulator", live: "https://os-simulator-black.vercel.app", featured: false, period: "Aug 2024 – Feb 2025" },
     { name: "Nimbus Weather", emoji: "🌤", stack: ["JavaScript", "OpenWeather API", "Async/Await", "GitHub Pages"], tags: ["JavaScript"], desc: "Live weather dashboard using OpenWeather API with responsive UI, multi-city toggle, and async API handling. Deployed on GitHub Pages.", badge: "Live API", badgeColor: "var(--cyan)", highlight: "OpenWeather API · Async JavaScript", github: "https://github.com/YASHGUPTA11122004/Nimbus-Weather", live: "https://yashgupta11122004.github.io/Nimbus-Weather/", featured: false, period: "Nov 2023 – Dec 2023" },
