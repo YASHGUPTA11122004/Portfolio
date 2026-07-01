@@ -8,7 +8,7 @@
 
 Personal portfolio of **Yash Gupta**, Software Engineer & CS Undergrad at Graphic Era Hill University (GEHU), Bhimtal.
 
-- 🎓 B.Tech CSE — 2022–2026 · CGPA: **8.41**
+- 🎓 B.Tech CSE — 2022–2026 · CGPA: **8.29**
 - 📄 **IEEE Published** — ICECAA 2023
 - 💻 **500+ Problems** Solved — LeetCode · CodeChef · GFG
 - 🔥 **100-day streak** badges on LeetCode & CodeChef
@@ -20,12 +20,14 @@ Personal portfolio of **Yash Gupta**, Software Engineer & CS Undergrad at Graphi
 
 | Project | Stack | Live |
 |---------|-------|------|
+| [Traffic Violation Detection](https://github.com/YASHGUPTA11122004/Traffic-Violation-Detection-System) | Python + YOLOv8 + EasyOCR | [HuggingFace Spaces](https://huggingface.co/spaces/yashgupta11122004/traffic-violation-detection) |
 | [CodeBox](https://github.com/YASHGUPTA11122004/CodeBox) | React + Django | [codebox-rho.vercel.app](https://codebox-rho.vercel.app) |
 | [OS Simulator](https://github.com/YASHGUPTA11122004/OS-Simulator) | Python | [os-simulator-black.vercel.app](https://os-simulator-black.vercel.app) |
 | [Nimbus Weather](https://github.com/YASHGUPTA11122004/Nimbus-Weather) | JavaScript | [Live](https://yashgupta11122004.github.io/Nimbus-Weather/) |
 | [Instant Tech News Radar](https://github.com/YASHGUPTA11122004/Instant-tech-news-radar) | React + Cloudflare | [itnr.pages.dev](https://itnr.pages.dev) |
 | [Supreme AI](https://github.com/YASHGUPTA11122004/supreme-ai) | React + AI APIs | [supreme-ai-eta.vercel.app](https://supreme-ai-eta.vercel.app/) |
 | [AI Biometrics Research](https://ieeexplore.ieee.org/abstract/document/10212224) | TensorFlow + OpenCV | [IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/10212224) |
+| [This Portfolio](https://github.com/YASHGUPTA11122004/Portfolio) | Next.js + React | [portfolio-sdab.vercel.app](https://portfolio-sdab.vercel.app) |
 
 ---
 
